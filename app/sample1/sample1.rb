@@ -44,7 +44,7 @@ doc.doc.xpath('//w:t').each do |el|
 end
 
 # 画像差し替え
-# TODO: 対応
+doc.replace_entry('word/media/image1.jpeg', File.read('app/sample1/cat360.jpeg'))
 
 # 保存
 doc.save('app/sample1/sample1.docx')
