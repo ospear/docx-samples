@@ -43,6 +43,11 @@ doc.doc.xpath('//w:t').each do |el|
   end
 end
 
+# 表の最終行を複製
+tbl = doc.doc.xpath('//w:tbl').first
+dup = tbl.children.last.dup
+tbl.add_child(dup)
+
 # 画像差し替え
 doc.replace_entry('word/media/image1.jpeg', File.read('app/sample1/cat360.jpeg'))
 
